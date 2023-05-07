@@ -1,0 +1,15 @@
+def read_fasta_file(filename):
+    seq = []
+    with open(filename, 'r') as f:
+        sequence = ''
+        for line in f:
+            line = line.strip() #обрезка начала и конца
+            if line.startswith('>'): # ищем строку начальную
+                if sequence:
+                    seq.append(sequence) #добавляем в список
+                    sequence = ''
+            else:
+                sequence += line
+    return seq
+
+print(read_fasta_file('/home/user/2948.fasta'))
