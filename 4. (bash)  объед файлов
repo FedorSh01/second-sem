@@ -1,0 +1,1 @@
+cat protein*.fasta > general.fasta
