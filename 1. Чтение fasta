@@ -3,10 +3,10 @@ def read_fasta_file(filename):
     with open(filename, 'r') as f:
         sequence = ''
         for line in f:
-            line = line.strip() #обрезка начала и конца
-            if line.startswith('>'): # ищем строку начальную
+            line = line.strip() 
+            if line.startswith('>'):
                 if sequence:
-                    seq.append(sequence) #добавляем в список
+                    seq.append(sequence) 
                     sequence = ''
             else:
                 sequence += line
